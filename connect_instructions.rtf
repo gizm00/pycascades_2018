@@ -1,0 +1,48 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fnil\fcharset0 AndaleMono;\f2\fnil\fcharset0 Verdana;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red35\green255\blue6;\red47\green255\blue18;
+\red0\green0\blue0;\red236\green236\blue236;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;\cssrgb\c0\c100000\c0;\cssrgb\c15686\c99608\c7843;
+\csgray\c0\c90000;\cssrgb\c94118\c94118\c94118;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl560\partightenfactor0
+
+\f0\fs48 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 192.168.4.3 - vine 16 connected to vine 5\
+\pard\pardeftab720\sl460\partightenfactor0
+\cf2 192.168.4.4 - vine 26 connected to vine 5\
+IP when logged into vine5 network:\cf3  
+\f1\fs24 \cf4 \cb5 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 192.168.4.2\
+\cf2 \cb1 \
+
+\f0\fs48 \cf3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec3 \
+\pard\pardeftab720\sl500\sa426\partightenfactor0
+
+\f2\fs37\fsmilli18667 \cf2 \strokec6 import network \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\
+sta_if = network.WLAN(network.STA_IF) sta_if.active(True)\
+\strokec7 sta_if.connect(\'91vine5\'92,\'92micropythoN\'92)\
+\pard\pardeftab720\sl460\partightenfactor0
+\cf2 \strokec6 sta_if.ifconfig() \'a0
+\f0\fs24 \cf8 \strokec8 \
+\
+\pard\pardeftab720\sl500\sa426\partightenfactor0
+
+\f2\fs37\fsmilli18667 \cf2 \strokec6 ap_if = network.WLAN(network.AP_IF) ap_if.active(False)\
+\'97\'97\'97\'97 SETUP MQTT\
+\pard\pardeftab720\sl660\partightenfactor0
+
+\fs48 \cf2 \strokec3 from umqtt.simple import MQTTClient
+\f0\fs24 \strokec8 \
+
+\f2\fs48 \strokec3 c = MQTTClient("umqtt_client",\'92192.168.4.2\'92) c.connect() \
+\
+\pard\pardeftab720\sl560\partightenfactor0
+
+\f0 \cf2 c.publish(b"vine_sensor/message",b"hi from vine16!\'94) 
+\fs24 \cf8 \strokec8 \
+\pard\pardeftab720\sl500\sa426\partightenfactor0
+\cf8 \
+}
